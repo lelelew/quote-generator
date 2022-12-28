@@ -27,17 +27,17 @@ export default function Quotes() {
   const [quoteInput, setQuoteInput] = useState<string>("");
 
   return (
-    <main className="relative min-h-screen flex-col bg-white sm:flex sm:items-center sm:justify-center">
+    <main className="container mx-auto flex min-h-screen flex-col place-content-center">
       <p className="block text-3xl">{data?.quote}</p>
       <Form method="post" action="/quotes">
-        <input
+        <textarea
           onChange={(e) => setQuoteInput(e.target.value)}
           value={quoteInput}
-          className="input"
-          type="text"
+          className="input block w-full"
           name="quoteInput"
+          rows={3}
         />
-        <button type="submit" className="button block">
+        <button type="submit" className="button mt-10 block w-full">
           Get Quote
         </button>
       </Form>
